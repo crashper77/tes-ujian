@@ -57,7 +57,7 @@
                     <h4 class="text-white m-0">Soal 1</h4>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title text-danger">N D J S K</h5>
+                    <h5 class="card-title text-danger"><?= $datanya['a']." ".$datanya['b']." ".$datanya['c']." ".$datanya['d']." ".$datanya['e']?></h5>
                     <h5 class="card-title text-dark">A B C D E</h5>
                 </div>
             </div>
@@ -65,24 +65,33 @@
         <div class="container px-4 px-lg-5">
             <div class="card text-white bg-white my-5 py-4 text-center">
                 <div class="card-body">
-                    <h5 class="text-danger m-0">N J D K</h5>
+                    <h5 class="text-danger m-0"><?php 
+                        if($datanya['benar']!=$datanya['a']){ echo $datanya['a']." "; }
+                        if($datanya['benar']!=$datanya['b']){ echo $datanya['b']." "; }
+                        if($datanya['benar']!=$datanya['c']){ echo $datanya['c']." "; }
+                        if($datanya['benar']!=$datanya['d']){ echo $datanya['d']." "; }
+                        if($datanya['benar']!=$datanya['e']){ echo $datanya['e']." "; }
+                    ?></h5>
+
+                    <input type="text" hidden name="benar" value="<?= $datanya['benar'];?>">
                     <div class="btn-group btn-group-toggle mt-lg-3" data-toggle="buttons">
-                        <label class="btn btn-outline-dark active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked> A
+                        <label class="btn btn-outline-dark">
+                            <input type="radio" value="<?= $datanya['a']?>" name="options" id="option1" autocomplete="off"> A
                         </label>
                         <label class="btn btn-outline-dark">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> B
+                            <input type="radio" name="options" value="<?= $datanya['b']?>" id="option2" autocomplete="off"> B
                         </label>
                         <label class="btn btn-outline-dark">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> C
+                            <input type="radio" name="options" value="<?= $datanya['c']?>" id="option3" autocomplete="off"> C
                         </label>
                         <label class="btn btn-outline-dark">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> D
+                            <input type="radio" name="options" id="option3" value="<?= $datanya['d']?>" autocomplete="off"> D
                         </label>
                         <label class="btn btn-outline-dark">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> E
+                            <input type="radio" name="options" id="option3" value="<?= $datanya['e']?>" autocomplete="off"> E
                         </label>
                     </div>
+                    <button class="btn btn-success" onclick="displayRadioValue()">Next</button>
                 </div>
             </div>
         </div>
@@ -93,5 +102,25 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="<?= base_url()?>iniaset/js/scripts.js"></script>
+
+        <script>
+            function displayRadioValue() {
+            var jawaban = document.getElementsByName('options');
+              
+            for(i = 0; i < jawaban.length; i++) {
+                if(jawaban[i].checked){
+                    var answer = jawaban[i].value;
+                }
+            }
+
+            var benar = "<?= $datanya['benar']?>";
+            if(answer==benar){
+                alert('Jawaban Benar');
+                window.location.href = "<?= base_url()?>";
+            } else {
+                alert('Jawaban Salah');
+            }
+        }
+        </script>
     </body>
 </html>
