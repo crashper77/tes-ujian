@@ -11,6 +11,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="<?= base_url()?>iniaset/css/styles.css" rel="stylesheet" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -57,7 +58,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title text-danger">N D J S K</h5>
-                    <h5 class="card-title text-danger">A B C D E</h5>
+                    <h5 class="card-title text-dark">A B C D E</h5>
                 </div>
             </div>
         </div>
@@ -65,19 +66,32 @@
             <div class="card text-white bg-white my-5 py-4 text-center">
                 <div class="card-body">
                     <h5 class="text-danger m-0">N J D K</h5>
-                    <ul class="d-flex list-group list-group-horizontal text-center">
-                        <li class="list-group-item">A</li>
-                        <li class="list-group-item">B</li>
-                        <li class="list-group-item">C</li>
-                        <li class="list-group-item">D</li>
-                        <li class="list-group-item">E</li>
-                      </ul>
+                    <div class="btn-group btn-group-toggle mt-lg-3" data-toggle="buttons">
+                        <label class="btn btn-outline-dark active">
+                            <input type="radio" name="options" id="option1" autocomplete="off" checked> A
+                        </label>
+                        <label class="btn btn-outline-dark">
+                            <input type="radio" name="options" id="option2" autocomplete="off"> B
+                        </label>
+                        <label class="btn btn-outline-dark">
+                            <input type="radio" name="options" id="option3" autocomplete="off"> C
+                        </label>
+                        <label class="btn btn-outline-dark">
+                            <input type="radio" name="options" id="option3" autocomplete="off"> D
+                        </label>
+                        <label class="btn btn-outline-dark">
+                            <input type="radio" name="options" id="option3" autocomplete="off"> E
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="<?= base_url()?>iniaset/js/scripts.js"></script>
     </body>
 </html>
