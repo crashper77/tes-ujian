@@ -34,7 +34,6 @@ class Home extends CI_Controller {
 
         $aj = array_rand($data);
         $jawaban = $data[$aj];
-        
         $db = array(
             'a' => $a,
             'b' => $b,
