@@ -91,7 +91,7 @@
                             <input type="radio" name="options" id="option3" value="<?= $datanya['e']?>" autocomplete="off"> E
                         </label>
                     </div>
-                    <button class="btn btn-success" onclick="displayRadioValue()">Next</button>
+                    <button class="btn btn-success mt-3" onclick="displayRadioValue()">Next</button>
                 </div>
             </div>
         </div>
